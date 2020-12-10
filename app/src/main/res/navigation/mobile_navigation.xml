@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/navigation_home">
+    <fragment
+            android:id="@+id/navigation_account"
+            android:name="com.isckon.irkutsk.ui.login.LoginFragment"
+            android:label="@string/title_account"
+            tools:layout="@layout/fragment_login"/>
+
+    <fragment
+            android:id="@+id/navigation_news"
+            android:name="com.isckon.irkutsk.ui.news.NewsFragment"
+            android:label="@string/title_news"
+            tools:layout="@layout/fragment_news"/>
+
+    <fragment
+            android:id="@+id/navigation_home"
+            android:name="com.isckon.irkutsk.ui.home.HomeFragment"
+            android:label="@string/title_home"
+            tools:layout="@layout/fragment_home"/>
+
+    <fragment
+            android:id="@+id/navigation_sadhana"
+            android:name="com.isckon.irkutsk.ui.sadhana.SadhanaFragment"
+            android:label="@string/title_sadhana"
+            tools:layout="@layout/fragment_sadhana"/>
+
+    <fragment
+            android:id="@+id/navigation_radio"
+            android:name="com.isckon.irkutsk.ui.radio.RadioFragment"
+            android:label="@string/title_radio"
+            tools:layout="@layout/fragment_radio"/>
+</navigation>
