@@ -1,5 +1,6 @@
 package com.isckon.irkutsk;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.isckon.irkutsk.data.News;
+import com.isckon.irkutsk.ui.news.SingleNewsFull;
 
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
@@ -32,11 +34,19 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder holder, int position) {
-        News singleNews = news.get(position);
+    public void onBindViewHolder(@NonNull final NewsAdapter.ViewHolder holder, int position) {
+        final News singleNews = news.get(position);
         holder.image.setImageResource(singleNews.getImage());
         holder.header.setText(singleNews.getHeader());
         holder.date.setText(sdf.format(singleNews.getDate()));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SingleNewsFull.class);
+                intent.putExtra("text",hold);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
