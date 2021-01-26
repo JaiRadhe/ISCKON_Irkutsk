@@ -15,7 +15,7 @@ public class SingleNewsFull extends AppCompatActivity {
 private SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_news_full);
         News news = getIntent().getParcelableExtra("news");
@@ -24,6 +24,6 @@ private SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         TextView label = findViewById(R.id.newsFullLabel);
         image.setImageResource(news.getImage());
         mainText.setText(news.getText());
-        label.setText(news.getHeader()+"\t"+sdf.format(news.getDate()));
+        label.setText(news.getHeader());
     }
 }
