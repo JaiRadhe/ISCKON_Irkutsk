@@ -43,7 +43,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), SingleNewsFull.class);
-                intent.putExtra("text",hold);
+                intent.putExtra("news",singleNews);
                 v.getContext().startActivity(intent);
             }
         });
